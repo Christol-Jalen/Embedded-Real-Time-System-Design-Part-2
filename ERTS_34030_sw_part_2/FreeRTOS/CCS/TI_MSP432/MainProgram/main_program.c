@@ -244,7 +244,7 @@ void main_program( void )
     //////////////////////////////////////////////////////////////////
 
     // TODO: start the scheduler
-     vTaskStartScheduler();
+    vTaskStartScheduler();
 
     /* INFO: If everything is fine, the scheduler will now be running,
     and the following line will never be reached.  If the following line
@@ -349,6 +349,7 @@ static void taskReadInputSwitch( void *pvParameters ){
 static void taskPlaySong(void *pvParameters) {
     // TODO: initialise the song
     init_song_pwm();
+
     // TODO: play the song's function and run forever
     while(1) {
         play_song();
@@ -357,9 +358,9 @@ static void taskPlaySong(void *pvParameters) {
 
 // TODO: create a static void function for taskBumpSwitch
 static void taskBumpSwitch(void *pvParameters) {
-
     // TODO: initialise bump switches
     BumpSwitch_Init();
+
     // TODO: Read the input of bump switches forever:
     //       Continuously read the 6 bump switches in a loop,
     //       and return it to the "bumpSwitch_status" variable.
@@ -371,32 +372,28 @@ static void taskBumpSwitch(void *pvParameters) {
         if (Bump_Read_Input()) {
             bumpSwitch_status = Bump_Read_Input();
         }
-
     }
 }
 
 
 // TODO: create a static void function for taskDisplayOutputLED
 static void taskDisplayOutputLED(void *pvParameters) {
-
     for( ;; ) {
-
         // TODO: use outputLED_response as the function and
         //       use bumpSwitch_status as the parameter
         if (bumpSwitch_status) {
             outputLED_response(bumpSwitch_status);
         }
-
     }
 }
 
 // a static void function for taskMasterThread
-static void taskMasterThread( void *pvParameters )
-{
+static void taskMasterThread( void *pvParameters ) {
     int i;
 
     // TODO: initialise the color LED
     ColorLED_Init();
+
     // initialise the red LED
     RedLED_Init();
 
@@ -407,6 +404,7 @@ static void taskMasterThread( void *pvParameters )
 
     // TODO: Turn off the RED LED, we no longer need that.
     REDLED = 0;
+    
     //////////////////////////////////////////////////////////////////
     // TIP: to suspend a task, use vTaskSuspend in FreeRTOS
     // URL: https://www.freertos.org/a00130.html
@@ -421,14 +419,14 @@ static void taskMasterThread( void *pvParameters )
     //       Please suspend this task itself, or maybe just delete it.
     //       Question: what are the difference between 'suspend' the task,
     //                 or 'delete' the task?
-    vTaskSuspend(NULL);
+    vTaskSuspend(taskMasterThread);
 }
 
 // TODO: create a static void function for taskdcMotor
 static void taskMasterThread(void *pvParameters) {
-
     // TODO: initialise the DC Motor
     dcMotor_Init();
+
     // TODO: use a polling that continuously read from the bumpSwitch_status,
     //       and run this forever in a while loop.
     //       use dcMotor_response and bumpSwitch_status for the parameter
