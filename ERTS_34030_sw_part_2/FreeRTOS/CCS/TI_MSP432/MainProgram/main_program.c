@@ -51,14 +51,19 @@
 
 // TODO: include the songFile header file
 #include "inc/songFile.h"
+
 // TODO: include the dcMotor header file
 #include "inc/dcMotor.h"
+
 // TODO: include the bumpSwitch header file
 #include "inc/bumpSwitch.h"
+
 // TODO: include the outputLED header file
 #include "inc/outputLED.h"
+
 // TODO: include the SysTick header file
 #include "inc/SysTick.h"
+
 // TODO: bit-banded addresses positive logic of input switch S1
 #define SW1IN ((*((volatile uint8_t *)(0x42098004)))^1)
 
@@ -128,117 +133,118 @@ void main_program( void )
 
     // TODO: initialise the switch
     Switch_Init();
+
     // TODO: initialise systick timer
     SysTick_Init();
+
     //////////////////////////////////////////////////////
     // TIP: to create a task, use xTaskCreate in FreeRTOS
     // URL : https://www.freertos.org/a00125.html
     //////////////////////////////////////////////////////
 
-        // TODO: Create a task that has these parameters=
-        //       pvTaskCode: taskMasterThread
-        //       pcName: taskT
-        //       usStackDepth: 128
-        //       pvParameters: NULL
-        //       uxPriority: 2
-        //       pxCreatedTask: taskHandle_BlinkRedLED
-
+    // TODO: Create a task that has these parameters=
+    //       pvTaskCode: taskMasterThread
+    //       pcName: taskT
+    //       usStackDepth: 128
+    //       pvParameters: NULL
+    //       uxPriority: 2
+    //       pxCreatedTask: taskHandle_BlinkRedLED
      xTaskCreate(
-                    taskMasterThread,       /* Function that implements the task. */
-                    "taskT",          /* Text name for the task. */
-                    128,      /* Stack size in words, not bytes. */
-                    ( void * ) NULL,    /* Parameter passed into the task. */
-                    2,/* Priority at which the task is created. */
-                    &taskHandle_BlinkRedLED );
+        taskMasterThread,       /* Function that implements the task. */
+        "taskT",                /* Text name for the task. */
+        128,                    /* Stack size in words, not bytes. */
+        ( void * ) NULL,        /* Parameter passed into the task. */
+        2,                      /* Priority at which the task is created. */
+        &taskHandle_BlinkRedLED /* Used to pass out the created task's handle. */
+    );
 
-        // TODO: Create a task that has these parameters=
-        //       pvTaskCode: taskBumpSwitch
-        //       pcName: taskB
-        //       usStackDepth: 128
-        //       pvParameters: NULL
-        //       uxPriority: 1
-        //       pxCreatedTask: taskHandle_BumpSwitch
-
+    // TODO: Create a task that has these parameters=
+    //       pvTaskCode: taskBumpSwitch
+    //       pcName: taskB
+    //       usStackDepth: 128
+    //       pvParameters: NULL
+    //       uxPriority: 1
+    //       pxCreatedTask: taskHandle_BumpSwitch
      xTaskCreate(
-                    taskBumpSwitch,       /* Function that implements the task. */
-                    "taskB",          /* Text name for the task. */
-                    128,      /* Stack size in words, not bytes. */
-                    ( void * ) NULL,    /* Parameter passed into the task. */
-                    1,/* Priority at which the task is created. */
-                    &taskHandle_BumpSwitch );
+        taskBumpSwitch,         /* Function that implements the task. */
+        "taskB",                /* Text name for the task. */
+        128,                    /* Stack size in words, not bytes. */
+        ( void * ) NULL,        /* Parameter passed into the task. */
+        1,                      /* Priority at which the task is created. */
+        &taskHandle_BumpSwitch  /* Used to pass out the created task's handle. */
+     );
 
-        // TODO: Create a task that has these parameters=
-        //       pvTaskCode: taskPlaySong
-        //       pcName: taskS
-        //       usStackDepth: 128
-        //       pvParameters: NULL
-        //       uxPriority: 1
-        //       pxCreatedTask: taskHandle_PlaySong
-
+    // TODO: Create a task that has these parameters=
+    //       pvTaskCode: taskPlaySong
+    //       pcName: taskS
+    //       usStackDepth: 128
+    //       pvParameters: NULL
+    //       uxPriority: 1
+    //       pxCreatedTask: taskHandle_PlaySong
      xTaskCreate(
-                    taskPlaySong,       /* Function that implements the task. */
-                    "taskS",          /* Text name for the task. */
-                    128,      /* Stack size in words, not bytes. */
-                    ( void * ) NULL,    /* Parameter passed into the task. */
-                    1,/* Priority at which the task is created. */
-                    &taskHandle_PlaySong );
+        taskPlaySong,           /* Function that implements the task. */
+        "taskS",                /* Text name for the task. */
+        128,                    /* Stack size in words, not bytes. */
+        ( void * ) NULL,        /* Parameter passed into the task. */
+        1,                      /* Priority at which the task is created. */
+        &taskHandle_PlaySong    /* Used to pass out the created task's handle. */
+    );  
 
-        // TODO: Create a task that has these parameters=
-        //       pvTaskCode: taskdcMotor
-        //       pcName: taskM
-        //       usStackDepth: 128
-        //       pvParameters: NULL
-        //       uxPriority: 1
-        //       pxCreatedTask: taskHandle_dcMotor
-
+    // TODO: Create a task that has these parameters=
+    //       pvTaskCode: taskdcMotor
+    //       pcName: taskM
+    //       usStackDepth: 128
+    //       pvParameters: NULL
+    //       uxPriority: 1
+    //       pxCreatedTask: taskHandle_dcMotor
      xTaskCreate(
-                    taskdcMotor,       /* Function that implements the task. */
-                    "taskM",          /* Text name for the task. */
-                    128,      /* Stack size in words, not bytes. */
-                    ( void * ) NULL,    /* Parameter passed into the task. */
-                    1,/* Priority at which the task is created. */
-                    &taskHandle_dcMotor );
+        taskdcMotor,            /* Function that implements the task. */
+        "taskM",                /* Text name for the task. */
+        128,                    /* Stack size in words, not bytes. */
+        ( void * ) NULL,        /* Parameter passed into the task. */
+        1,                      /* Priority at which the task is created. */
+        &taskHandle_dcMotor     /* Used to pass out the created task's handle. */
+    );
 
-        // TODO: Create a task that has these parameters=
-        //       pvTaskCode: taskReadInputSwitch
-        //       pcName: taskR
-        //       usStackDepth: 128
-        //       pvParameters: NULL
-        //       uxPriority: 1
-        //       pxCreatedTask: taskHandle_InputSwitch
-
+    // TODO: Create a task that has these parameters=
+    //       pvTaskCode: taskReadInputSwitch
+    //       pcName: taskR
+    //       usStackDepth: 128
+    //       pvParameters: NULL
+    //       uxPriority: 1
+    //       pxCreatedTask: taskHandle_InputSwitch
      xTaskCreate(
-                    taskReadInputSwitch,       /* Function that implements the task. */
-                    "taskR",          /* Text name for the task. */
-                    128,      /* Stack size in words, not bytes. */
-                    ( void * ) NULL,    /* Parameter passed into the task. */
-                    1,/* Priority at which the task is created. */
-                    &taskHandle_InputSwitch );
+        taskReadInputSwitch,    /* Function that implements the task. */
+        "taskR",                /* Text name for the task. */
+        128,                    /* Stack size in words, not bytes. */
+        ( void * ) NULL,        /* Parameter passed into the task. */
+        1,                      /* Priority at which the task is created. */
+        &taskHandle_InputSwitch /* Used to pass out the created task's handle. */
+    );
 
-        // TODO: Create a task that has these parameters=
-        //       pvTaskCode: taskDisplayOutputLED
-        //       pcName: taskD
-        //       usStackDepth: 128
-        //       pvParameters: NULL
-        //       uxPriority: 1
-        //       pxCreatedTask: taskHandle_OutputLED
-
+    // TODO: Create a task that has these parameters=
+    //       pvTaskCode: taskDisplayOutputLED
+    //       pcName: taskD
+    //       usStackDepth: 128
+    //       pvParameters: NULL
+    //       uxPriority: 1
+    //       pxCreatedTask: taskHandle_OutputLED
      xTaskCreate(
-                    taskDisplayOutputLED,       /* Function that implements the task. */
-                    "taskD",          /* Text name for the task. */
-                    128,      /* Stack size in words, not bytes. */
-                    ( void * ) NULL,    /* Parameter passed into the task. */
-                    1,/* Priority at which the task is created. */
-                    &taskHandle_OutputLED );
+        taskDisplayOutputLED,   /* Function that implements the task. */
+        "taskD",                /* Text name for the task. */
+        128,                    /* Stack size in words, not bytes. */
+        ( void * ) NULL,        /* Parameter passed into the task. */
+        1,                      /* Priority at which the task is created. */
+        &taskHandle_OutputLED   /* Used to pass out the created task's handle. */
+     );
 
-        //////////////////////////////////////////////////////////////////
-        // TIP: to start a scheduler, use vTaskStartScheduler in FreeRTOS
-        // URL : https://www.freertos.org/a00132.html
-        //////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////
+    // TIP: to start a scheduler, use vTaskStartScheduler in FreeRTOS
+    // URL : https://www.freertos.org/a00132.html
+    //////////////////////////////////////////////////////////////////
 
-        // TODO: start the scheduler
+    // TODO: start the scheduler
      vTaskStartScheduler();
-
 
     /* INFO: If everything is fine, the scheduler will now be running,
     and the following line will never be reached.  If the following line
