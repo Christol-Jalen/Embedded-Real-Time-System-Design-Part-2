@@ -95,7 +95,7 @@ static void taskReadInputSwitch(void *pvParameters);
 // TODO: declare a static void function for a task called "taskdcMotor"
 static void taskdcMotor(void *pvParameters);
 
-//static void taskDisplayOutputLED();
+//static void taskDisplayOutputLED();??????????????????????????????????????
 
 /*
  * Called by main() to create the main program application
@@ -419,7 +419,7 @@ static void taskMasterThread( void *pvParameters ) {
     //       Please suspend this task itself, or maybe just delete it.
     //       Question: what are the difference between 'suspend' the task,
     //                 or 'delete' the task?
-    vTaskSuspend(taskMasterThread);
+    vTaskSuspend(NULL);
 }
 
 // TODO: create a static void function for taskdcMotor
