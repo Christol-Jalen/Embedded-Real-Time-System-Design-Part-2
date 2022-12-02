@@ -1,7 +1,7 @@
 # FIXED
 
 driverlib/fpu.obj: ../driverlib/fpu.c
-driverlib/fpu.obj: C:/Users/ho19623/OneDrive\ -\ University\ of\ Bristol/Documents/Downloads/ERTS_34030_sw_part_2/ERTS_34030_sw_part_2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/fpu.h
+driverlib/fpu.obj: C:/Users/hj19126/OneDrive\ -\ University\ of\ Bristol/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/fpu.h
 driverlib/fpu.obj: C:/TI/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdint.h
 driverlib/fpu.obj: C:/TI/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_ti_config.h
 driverlib/fpu.obj: C:/TI/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/linkage.h
@@ -23,7 +23,7 @@ driverlib/fpu.obj: C:/TI/ccs/ccs_base/arm/include/system_msp432p401r.h
 
 ../driverlib/fpu.c:
 
-C:/Users/ho19623/OneDrive\ -\ University\ of\ Bristol/Documents/Downloads/ERTS_34030_sw_part_2/ERTS_34030_sw_part_2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/fpu.h:
+C:/Users/hj19126/OneDrive\ -\ University\ of\ Bristol/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/fpu.h:
 
 C:/TI/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdint.h:
 

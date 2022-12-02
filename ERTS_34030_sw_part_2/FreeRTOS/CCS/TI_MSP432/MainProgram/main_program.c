@@ -95,7 +95,7 @@ static void taskReadInputSwitch(void *pvParameters);
 // TODO: declare a static void function for a task called "taskdcMotor"
 static void taskdcMotor(void *pvParameters);
 
-//static void taskDisplayOutputLED();??????????????????????????????????????
+static void taskDisplayOutputLED(void *pvParameters);
 
 /*
  * Called by main() to create the main program application
@@ -339,7 +339,7 @@ static void taskReadInputSwitch( void *pvParameters ){
         else {
             REDLED = 0;     // turn off the red LED
             // TODO: resume the task taskHandle_PlaySong
-            vTaskSuspend(taskHandle_PlaySong);
+            vTaskResume(taskHandle_PlaySong);
         }
 
     }
@@ -419,11 +419,13 @@ static void taskMasterThread( void *pvParameters ) {
     //       Please suspend this task itself, or maybe just delete it.
     //       Question: what are the difference between 'suspend' the task,
     //                 or 'delete' the task?
-    vTaskSuspend(NULL);
+    if (SW2IN) {
+        vTaskSuspend(NULL);
+    }
 }
 
 // TODO: create a static void function for taskdcMotor
-static void taskMasterThread(void *pvParameters) {
+static void taskdcMotor(void *pvParameters) {
     // TODO: initialise the DC Motor
     dcMotor_Init();
 
@@ -431,7 +433,11 @@ static void taskMasterThread(void *pvParameters) {
     //       and run this forever in a while loop.
     //       use dcMotor_response and bumpSwitch_status for the parameter
     while(1) {
-
+        // polling detect bumpSwitch_status
+        if (bumpSwitch_status) {
+            dcMotor_response(bumpSwitch_status);
+        }
+//        bumpSwitch_status == 1 ? dcMotor_response(bumpSwitch_status) : continue;
     }
 }
 

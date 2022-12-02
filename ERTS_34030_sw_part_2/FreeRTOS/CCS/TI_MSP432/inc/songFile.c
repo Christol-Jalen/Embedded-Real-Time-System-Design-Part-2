@@ -117,97 +117,131 @@ void beep(unsigned int note, unsigned int duration)
 //              and some delays to separate the various bits of this wonderful song.
 void play_song()
 {
-    beep(a, 500);
-    beep(a, 500);
-    beep(a, 500);
-    beep(f, 350);
-    beep(cH, 150);
-    beep(a, 500);
-    beep(f, 350);
-    beep(cH, 150);
-    beep(a, 650);
+//    beep(a, 500);
+//    beep(a, 500);
+//    beep(a, 500);
+//    beep(f, 350);
+//    beep(cH, 150);
+//    beep(a, 500);
+//    beep(f, 350);
+//    beep(cH, 150);
+//    beep(a, 650);
+//
+//    delay_ms(150);
+//    //end of first bit
+//
+//    beep(eH, 500);
+//    beep(eH, 500);
+//    beep(eH, 500);
+//    beep(fH, 350);
+//    beep(cH, 150);
+//    beep(gS, 500);
+//    beep(f, 350);
+//    beep(cH, 150);
+//    beep(a, 650);
+//
+//    delay_ms(150);
+//    //end of second bit...
+//
+//    beep(aH, 500);
+//    beep(a, 300);
+//    beep(a, 150);
+//    beep(aH, 400);
+//    beep(gSH, 200);
+//    beep(gH, 200);
+//    beep(fSH, 125);
+//    beep(fH, 125);
+//    beep(fSH, 250);
+//
+//    delay_ms(250);
+//
+//    beep(aS, 250);
+//    beep(dSH, 400);
+//    beep(dH, 200);
+//    beep(cSH, 200);
+//    beep(cH, 125);
+//    beep(b, 125);
+//    beep(cH, 250);
+//
+//    delay_ms(250);
+//
+//    beep(f, 125);
+//    beep(gS, 500);
+//    beep(f, 375);
+//    beep(a, 125);
+//    beep(cH, 500);
+//    beep(a, 375);
+//    beep(cH, 125);
+//    beep(eH, 650);
+//
+//    //end of third bit... (Though it doesn't play well)
+//    //let's repeat it
+//
+//    beep(aH, 500);
+//    beep(a, 300);
+//    beep(a, 150);
+//    beep(aH, 400);
+//    beep(gSH, 200);
+//    beep(gH, 200);
+//    beep(fSH, 125);
+//    beep(fH, 125);
+//    beep(fSH, 250);
+//
+//    delay_ms(250);
+//
+//    beep(aS, 250);
+//    beep(dSH, 400);
+//    beep(dH, 200);
+//    beep(cSH, 200);
+//    beep(cH, 125);
+//    beep(b, 125);
+//    beep(cH, 250);
+//
+//    delay_ms(250);
+//
+//    beep(f, 250);
+//    beep(gS, 500);
+//    beep(f, 375);
+//    beep(cH, 125);
+//    beep(a, 500);
+//    beep(f, 375);
+//    beep(cH, 125);
+//    beep(a, 650);
+//    //end of the song
 
-    delay_ms(150);
-    //end of first bit
+    beep(c, 500);
+    beep(c, 500);
+    beep(d, 1000);
+    beep(c, 1000);
+    beep(f, 1000);
+    beep(e, 2000);
 
-    beep(eH, 500);
-    beep(eH, 500);
-    beep(eH, 500);
-    beep(fH, 350);
-    beep(cH, 150);
-    beep(gS, 500);
-    beep(f, 350);
-    beep(cH, 150);
-    beep(a, 650);
+    beep(c, 500);
+    beep(c, 500);
+    beep(d, 1000);
+    beep(c, 1000);
+    beep(g, 1000);
+    beep(f, 2000);
 
-    delay_ms(150);
-    //end of second bit...
+    beep(c, 500);
+    beep(c, 500);
+    beep(cH, 1000);
+    beep(a, 1000);
+    beep(f, 1000);
+    beep(e, 1000);
+    beep(d, 2000);
 
-    beep(aH, 500);
-    beep(a, 300);
-    beep(a, 150);
-    beep(aH, 400);
-    beep(gSH, 200);
-    beep(gH, 200);
-    beep(fSH, 125);
-    beep(fH, 125);
-    beep(fSH, 250);
+    beep(aS, 500);
+    beep(aS, 500);
+    beep(a, 1000);
+    beep(f, 1000);
+    beep(g, 1000);
+    beep(f, 2000);
 
-    delay_ms(250);
 
-    beep(aS, 250);
-    beep(dSH, 400);
-    beep(dH, 200);
-    beep(cSH, 200);
-    beep(cH, 125);
-    beep(b, 125);
-    beep(cH, 250);
 
-    delay_ms(250);
 
-    beep(f, 125);
-    beep(gS, 500);
-    beep(f, 375);
-    beep(a, 125);
-    beep(cH, 500);
-    beep(a, 375);
-    beep(cH, 125);
-    beep(eH, 650);
 
-    //end of third bit... (Though it doesn't play well)
-    //let's repeat it
-
-    beep(aH, 500);
-    beep(a, 300);
-    beep(a, 150);
-    beep(aH, 400);
-    beep(gSH, 200);
-    beep(gH, 200);
-    beep(fSH, 125);
-    beep(fH, 125);
-    beep(fSH, 250);
-
-    delay_ms(250);
-
-    beep(aS, 250);
-    beep(dSH, 400);
-    beep(dH, 200);
-    beep(cSH, 200);
-    beep(cH, 125);
-    beep(b, 125);
-    beep(cH, 250);
-
-    delay_ms(250);
-
-    beep(f, 250);
-    beep(gS, 500);
-    beep(f, 375);
-    beep(cH, 125);
-    beep(a, 500);
-    beep(f, 375);
-    beep(cH, 125);
-    beep(a, 650);
-    //end of the song
 
     delay_ms(2000); //Add a 2 sec. delay to avoid replaying right after the end.
 
