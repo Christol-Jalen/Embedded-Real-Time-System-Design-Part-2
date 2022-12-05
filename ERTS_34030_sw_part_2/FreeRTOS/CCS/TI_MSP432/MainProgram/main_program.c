@@ -74,6 +74,10 @@
 //       name this as bumpSwitch_status and use uint8_t
 uint8_t bumpSwitch_status;
 
+int interruptV = 0;
+
+int timeFlag;
+
 // static void Switch_Init
 static void Switch_Init(void);
 
@@ -92,10 +96,17 @@ static void taskdcMotor(void *pvParameters);
 // TODO: declare a static void function for a task called "taskReadInputSwitch"
 static void taskReadInputSwitch(void *pvParameters);
 
-// TODO: declare a static void function for a task called "taskdcMotor"
-static void taskdcMotor(void *pvParameters);
-
+// TODO: declare a static void function for a task called "taskDisplayOutputLED"
 static void taskDisplayOutputLED(void *pvParameters);
+
+//static void taskInterrupt(void *pvParameters);
+
+static void taskPriorityIncre(xTaskHandle);
+
+static void taskPriorityDecre(xTaskHandle);
+
+static void conditionDelay(int);
+
 
 /*
  * Called by main() to create the main program application
@@ -124,7 +135,6 @@ xTaskHandle taskHandle_InputSwitch;
 
 // TODO: declare an identifier of task handler called "taskHandle_OutputLED"
 xTaskHandle taskHandle_OutputLED;
-
 
 void main_program( void )
 {
@@ -310,15 +320,28 @@ static void Switch_Init(void){
 // a static void function for taskReadInputSwitch
 static void taskReadInputSwitch( void *pvParameters ){
 
-    char i_SW1=0;
+    char i_SW1 = 0;
+    interruptV = 0;
     int i;
 
     for( ;; )
     {
-        if (SW1IN == 1) {
+        if (SW1IN) {
             i_SW1 ^= 1;                 // toggle the variable i_SW1
             for (i=0; i<1000000; i++);  // this waiting loop is used
                                         // to prevent the switch bounce.
+        }
+
+        if (SW2IN) {
+            if (interruptV == 1) {
+                interruptV = 0;
+                taskPriorityDecre(taskHandle_PlaySong);
+                taskPriorityDecre(taskHandle_InputSwitch);
+            } else {
+                interruptV = 1;
+                taskPriorityIncre(taskHandle_InputSwitch);
+                taskPriorityIncre(taskHandle_PlaySong);
+            }
         }
 
         ///////////////////////////////////////////////////////////
@@ -331,17 +354,16 @@ static void taskReadInputSwitch( void *pvParameters ){
         // URL: https://www.freertos.org/a00131.html
         ///////////////////////////////////////////////////////////
 
+        // polling
         if (i_SW1 == 1) {
             REDLED = 1;     // turn on the red LED
             // TODO: suspend the task taskHandle_PlaySong
             vTaskSuspend(taskHandle_PlaySong);
-        }
-        else {
+        } else {
             REDLED = 0;     // turn off the red LED
             // TODO: resume the task taskHandle_PlaySong
             vTaskResume(taskHandle_PlaySong);
         }
-
     }
 }
 
@@ -350,9 +372,22 @@ static void taskPlaySong(void *pvParameters) {
     // TODO: initialise the song
     init_song_pwm();
 
-    // TODO: play the song's function and run forever
-    while(1) {
-        play_song();
+
+//    if (interruptV == 1) {
+//        REDLED = 1;
+//        taskPriorityIncre(taskHandle_PlaySong);
+////        conditionDelay(10000);
+//        while(1) {
+//            play_song();
+//        }
+//        taskPriorityDecre(taskHandle_PlaySong);
+//    }
+//else
+{
+        // TODO: play the song's function and run forever
+        while(1) {
+            play_song();
+        }
     }
 }
 
@@ -442,3 +477,18 @@ static void taskdcMotor(void *pvParameters) {
 }
 
 
+static void taskPriorityIncre(xTaskHandle taskHandler) {
+    vTaskPrioritySet(taskHandler, uxTaskPriorityGet(taskHandler)+1);
+}
+
+
+static void taskPriorityDecre(xTaskHandle taskHandler) {
+    vTaskPrioritySet(taskHandler, uxTaskPriorityGet(taskHandler)-1);
+}
+
+
+static void conditionDelay(int time) {
+    timeFlag = 1;
+    SysTick_Wait10ms(time);
+    timeFlag = 0;
+}
