@@ -321,7 +321,6 @@ static void Switch_Init(void){
 static void taskReadInputSwitch( void *pvParameters ){
 
     char i_SW1 = 0;
-    interruptV = 0;
     int i;
 
     for( ;; )
@@ -332,17 +331,23 @@ static void taskReadInputSwitch( void *pvParameters ){
                                         // to prevent the switch bounce.
         }
 
+        if (SW2IN) {                 // toggle the variable i_SW2
+            for (i=0; i<1000000; i++);
+        }
+
         if (SW2IN) {
             if (interruptV == 1) {
-                interruptV = 0;
+                REDLED = 1;
                 taskPriorityDecre(taskHandle_PlaySong);
                 taskPriorityDecre(taskHandle_InputSwitch);
+                interruptV = 0;
             } else {
-                interruptV = 1;
                 taskPriorityIncre(taskHandle_InputSwitch);
                 taskPriorityIncre(taskHandle_PlaySong);
+                interruptV = 1;
             }
         }
+
 
         ///////////////////////////////////////////////////////////
         // TIP: to suspend a task, use vTaskSuspend in FreeRTOS
@@ -487,8 +492,8 @@ static void taskPriorityDecre(xTaskHandle taskHandler) {
 }
 
 
-static void conditionDelay(int time) {
-    timeFlag = 1;
-    SysTick_Wait10ms(time);
-    timeFlag = 0;
-}
+//static void conditionDelay(int time) {
+//    timeFlag = 1;
+//    SysTick_Wait10ms(time);
+//    timeFlag = 0;
+//}
