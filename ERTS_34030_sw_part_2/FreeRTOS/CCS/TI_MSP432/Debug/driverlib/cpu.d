@@ -1,7 +1,7 @@
 # FIXED
 
 driverlib/cpu.obj: ../driverlib/cpu.c
-driverlib/cpu.obj: C:/Users/ow20717/OneDrive\ -\ University\ of\ Bristol/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/cpu.h
+driverlib/cpu.obj: N:/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/cpu.h
 driverlib/cpu.obj: C:/TI/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdint.h
 driverlib/cpu.obj: C:/TI/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_ti_config.h
 driverlib/cpu.obj: C:/TI/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/linkage.h
@@ -23,7 +23,7 @@ driverlib/cpu.obj: C:/TI/ccs/ccs_base/arm/include/system_msp432p401r.h
 
 ../driverlib/cpu.c:
 
-C:/Users/ow20717/OneDrive\ -\ University\ of\ Bristol/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/cpu.h:
+N:/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/cpu.h:
 
 C:/TI/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdint.h:
 

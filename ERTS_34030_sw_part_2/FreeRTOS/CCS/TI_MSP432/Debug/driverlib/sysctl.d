@@ -12,7 +12,7 @@ driverlib/sysctl.obj: C:/TI/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/mac
 driverlib/sysctl.obj: C:/TI/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_stdint.h
 driverlib/sysctl.obj: C:/TI/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_stdint.h
 driverlib/sysctl.obj: C:/TI/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdbool.h
-driverlib/sysctl.obj: C:/Users/ow20717/OneDrive\ -\ University\ of\ Bristol/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/sysctl.h
+driverlib/sysctl.obj: N:/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/sysctl.h
 driverlib/sysctl.obj: C:/TI/ccs/ccs_base/arm/include/msp.h
 driverlib/sysctl.obj: C:/TI/ccs/ccs_base/arm/include/msp432p401r.h
 driverlib/sysctl.obj: C:/TI/ccs/ccs_base/arm/include/msp_compatibility.h
@@ -21,7 +21,7 @@ driverlib/sysctl.obj: C:/TI/ccs/ccs_base/arm/include/CMSIS/core_cm4.h
 driverlib/sysctl.obj: C:/TI/ccs/ccs_base/arm/include/CMSIS/cmsis_compiler.h
 driverlib/sysctl.obj: C:/TI/ccs/ccs_base/arm/include/CMSIS/cmsis_ccs.h
 driverlib/sysctl.obj: C:/TI/ccs/ccs_base/arm/include/system_msp432p401r.h
-driverlib/sysctl.obj: C:/Users/ow20717/OneDrive\ -\ University\ of\ Bristol/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/debug.h
+driverlib/sysctl.obj: N:/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/debug.h
 
 ../driverlib/sysctl.c:
 
@@ -47,7 +47,7 @@ C:/TI/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_stdint.h:
 
 C:/TI/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdbool.h:
 
-C:/Users/ow20717/OneDrive\ -\ University\ of\ Bristol/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/sysctl.h:
+N:/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/sysctl.h:
 
 C:/TI/ccs/ccs_base/arm/include/msp.h:
 
@@ -65,5 +65,5 @@ C:/TI/ccs/ccs_base/arm/include/CMSIS/cmsis_ccs.h:
 
 C:/TI/ccs/ccs_base/arm/include/system_msp432p401r.h:
 
-C:/Users/ow20717/OneDrive\ -\ University\ of\ Bristol/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/debug.h:
+N:/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/debug.h:
 

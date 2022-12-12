@@ -6,7 +6,7 @@ SHELL = cmd.exe
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-C:/Users/ow20717/OneDrive\ -\ University\ of\ Bristol/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/Source/portable/MemMang/heap_4.c 
+N:/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/Source/portable/MemMang/heap_4.c 
 
 C_DEPS += \
 ./FreeRTOS_Source/portable/MemMang/heap_4.d 
@@ -21,6 +21,6 @@ C_DEPS__QUOTED += \
 "FreeRTOS_Source\portable\MemMang\heap_4.d" 
 
 C_SRCS__QUOTED += \
-"C:/Users/ow20717/OneDrive - University of Bristol/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/Source/portable/MemMang/heap_4.c" 
+"N:/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/Source/portable/MemMang/heap_4.c" 
 
 

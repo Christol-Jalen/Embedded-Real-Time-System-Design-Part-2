@@ -460,7 +460,7 @@ static void taskMasterThread( void *pvParameters ) {
     //       Question: what are the difference between 'suspend' the task,
     //                 or 'delete' the task?
     if (SW2IN) {
-        vTaskSuspend(NULL);
+        vTaskDelete(NULL);
     }
 }
 
@@ -491,9 +491,3 @@ static void taskPriorityDecre(xTaskHandle taskHandler) {
     vTaskPrioritySet(taskHandler, uxTaskPriorityGet(taskHandler)-1);
 }
 
-
-//static void conditionDelay(int time) {
-//    timeFlag = 1;
-//    SysTick_Wait10ms(time);
-//    timeFlag = 0;
-//}

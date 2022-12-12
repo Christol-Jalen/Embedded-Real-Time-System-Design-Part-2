@@ -1,7 +1,7 @@
 # FIXED
 
 driverlib/uart.obj: ../driverlib/uart.c
-driverlib/uart.obj: C:/Users/ow20717/OneDrive\ -\ University\ of\ Bristol/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/uart.h
+driverlib/uart.obj: N:/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/uart.h
 driverlib/uart.obj: C:/TI/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdint.h
 driverlib/uart.obj: C:/TI/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/_ti_config.h
 driverlib/uart.obj: C:/TI/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/linkage.h
@@ -21,13 +21,13 @@ driverlib/uart.obj: C:/TI/ccs/ccs_base/arm/include/CMSIS/core_cm4.h
 driverlib/uart.obj: C:/TI/ccs/ccs_base/arm/include/CMSIS/cmsis_compiler.h
 driverlib/uart.obj: C:/TI/ccs/ccs_base/arm/include/CMSIS/cmsis_ccs.h
 driverlib/uart.obj: C:/TI/ccs/ccs_base/arm/include/system_msp432p401r.h
-driverlib/uart.obj: C:/Users/ow20717/OneDrive\ -\ University\ of\ Bristol/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/eusci.h
-driverlib/uart.obj: C:/Users/ow20717/OneDrive\ -\ University\ of\ Bristol/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/interrupt.h
-driverlib/uart.obj: C:/Users/ow20717/OneDrive\ -\ University\ of\ Bristol/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/debug.h
+driverlib/uart.obj: N:/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/eusci.h
+driverlib/uart.obj: N:/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/interrupt.h
+driverlib/uart.obj: N:/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/debug.h
 
 ../driverlib/uart.c:
 
-C:/Users/ow20717/OneDrive\ -\ University\ of\ Bristol/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/uart.h:
+N:/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/uart.h:
 
 C:/TI/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdint.h:
 
@@ -67,9 +67,9 @@ C:/TI/ccs/ccs_base/arm/include/CMSIS/cmsis_ccs.h:
 
 C:/TI/ccs/ccs_base/arm/include/system_msp432p401r.h:
 
-C:/Users/ow20717/OneDrive\ -\ University\ of\ Bristol/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/eusci.h:
+N:/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/eusci.h:
 
-C:/Users/ow20717/OneDrive\ -\ University\ of\ Bristol/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/interrupt.h:
+N:/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/interrupt.h:
 
-C:/Users/ow20717/OneDrive\ -\ University\ of\ Bristol/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/debug.h:
+N:/RobotPart2/ERTS_34030_sw_part_2/FreeRTOS/CCS/TI_MSP432/driverlib/debug.h:
 
